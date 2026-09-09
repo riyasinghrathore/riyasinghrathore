@@ -12,6 +12,14 @@ In this one, I don't actually know how to ski.
 
 **So I build things instead.**
 
+Meet me at the terminal:
+
+  ```sh
+  npx riyasinghrathore
+  ```
+  
+ Or through the usual doors:
+
 <div align="center">
 
 [![Email](https://img.shields.io/badge/Email-riyasinghrathore.work@gmail.com-8b6f9e?style=for-the-badge&logo=gmail&logoColor=white)](mailto:riya.anshul@gmail.com)
