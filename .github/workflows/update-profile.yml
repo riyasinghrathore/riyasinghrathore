@@ -1,0 +1,34 @@
+name: Sync about.md gist to profile README
+
+on:
+  schedule:
+    - cron: '0 6 * * *' 
+  workflow_dispatch:   # Lets you click "Run workflow" manually
+
+permissions:
+  contents: write
+
+jobs:
+    sync:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+
+        - name: Pull latest gist content into README.md
+          run: |
+            curl -fsSL \
+              "https://gist.githubusercontent.com/riyasinghrathore/05bc808acd8143631a4d7bed82b9f3be/raw/about.md" \
+              -o README.md
+
+        - name: Commit if the README changed
+          run: |
+            if git diff --quiet -- README.md; then
+              echo "No changes — nothing to sync."
+            else
+              git config user.name  "github-actions[bot]"
+              git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git add README.md
+              git commit -m "chore: sync profile README from about.md gist"
+              git push
+            fi
+
