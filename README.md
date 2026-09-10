@@ -10,8 +10,6 @@ In another universe, I'd be a **professional skier**.
 
 In this one, I don't actually know how to ski.
 
-**So I build things instead.**
-
 Meet me at the terminal:
 
   ```sh
